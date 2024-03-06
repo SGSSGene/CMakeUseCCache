@@ -11,7 +11,7 @@ include (FindPackageMessage)
 # See also
 # * https://ccache.dev/
 # * https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_COMPILER_LAUNCHER.html
-
+macro(require_ccache)
 option (USE_CCACHE "Use ccache if available." ON)
 set (FPROFILE_ABS_PATH "-fprofile-abs-path")
 if (USE_CCACHE)
@@ -32,3 +32,4 @@ if (USE_CCACHE)
 
     unset (CCACHE_PROGRAM)
 endif ()
+endmacro()
